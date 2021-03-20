@@ -137,6 +137,13 @@ namespace P80
             PC++;
         }
 
+        public void CMP(byte V)
+        {
+            CYCLES += 4;
+            ZF = (A - V == 0) ? true : false;
+            PC++;
+        }
+
         public CPU()
         {
             A = 0;

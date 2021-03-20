@@ -117,11 +117,28 @@ namespace P80Program
             
         }
 
+        public void DisplayRegisters(CPU p)
+        {
+            Console.SetCursorPosition(50, 1);
+            Console.WriteLine("|     A: "+p.A.ToString().PadLeft(3));
+
+            Console.SetCursorPosition(50, 2);
+            Console.WriteLine("|     B: " + p.B.ToString().PadLeft(3));
+
+            Console.SetCursorPosition(50, 3);
+            String ZF = (p.ZF == true) ? "1" : "0";
+            Console.WriteLine("|    ZF: " + ZF.PadLeft(3)); 
+
+            Console.SetCursorPosition(50, 4);
+            Console.WriteLine("|CYCLES: " + p.CYCLES.ToString().PadLeft(3));
+        }
+
         private void RunCode()
         {
             while (p.PC < program.Count)
             {
                 Execute(program[p.PC]);
+                DisplayRegisters(p);
                 Thread.Sleep(100);
             }
             isRunning = false;
