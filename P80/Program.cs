@@ -33,7 +33,7 @@ namespace P80
 
             Console.SetCursorPosition(0, 2);
             Console.WriteLine(code);
-            p.msSleepPerInstruction = 5;
+            p.msSleepPerInstruction = 0;
             p.Run(code);
         }
     }

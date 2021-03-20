@@ -124,17 +124,17 @@ namespace P80Program
         public void DisplayRegisters(CPU p)
         {
             Console.SetCursorPosition(40, 1);
-            Console.WriteLine("|     A: "+p.A.ToString().PadLeft(3));
+            Console.WriteLine("|     A:  "+p.A.ToString().PadLeft(3));
 
             Console.SetCursorPosition(40, 2);
-            Console.WriteLine("|     B: " + p.B.ToString().PadLeft(3));
+            Console.WriteLine("|     B:  " + p.B.ToString().PadLeft(3));
 
             Console.SetCursorPosition(40, 3);
             String ZF = (p.ZF == true) ? "1" : "0";
-            Console.WriteLine("|    ZF: " + ZF.PadLeft(3)); 
+            Console.WriteLine("|    ZF:  " + ZF.PadLeft(3)); 
 
             Console.SetCursorPosition(40, 4);
-            Console.WriteLine("|CYCLES: " + p.CYCLES.ToString().PadLeft(3));
+            Console.WriteLine("|    PC:  " + p.PC.ToString().PadLeft(3));
 
             Console.SetCursorPosition(40, 5);
             Console.WriteLine("|P1: " + Convert.ToString(p.P1, 2).PadLeft(8, '0'));
@@ -157,7 +157,6 @@ namespace P80Program
             isRunning = true;   //this has to be here because Start() takes more time than test will Assert the results
             Thread progThread = new Thread(new ThreadStart(RunCode));
             progThread.Start();
-
         }
     }
 }
