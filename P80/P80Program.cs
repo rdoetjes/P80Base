@@ -135,6 +135,9 @@ namespace P80Program
 
             Console.SetCursorPosition(40, 4);
             Console.WriteLine("|CYCLES: " + p.CYCLES.ToString().PadLeft(3));
+
+            Console.SetCursorPosition(40, 5);
+            Console.WriteLine("|P1: " + Convert.ToString(p.P1, 2).PadLeft(8, '0'));
         }
 
         private void RunCode()

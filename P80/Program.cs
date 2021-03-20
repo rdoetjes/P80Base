@@ -19,10 +19,12 @@ namespace P80
             code += "  SWP\r\n";
             code += "UP:\r\n";
             code += "  SHL\r\n";
+            code += "  OUT\r\n";
             code += "  CMP 128\r\n";
             code += "  JNZ UP\r\n";
             code += "DOWN:\r\n";
             code += "  SHR\r\n";
+            code += "  OUT\r\n";
             code += "  CMP 1\r\n";
             code += "  JNZ DOWN\r\n";
             code += "  SWP\r\n";
@@ -31,7 +33,7 @@ namespace P80
 
             Console.SetCursorPosition(0, 2);
             Console.WriteLine(code);
-            p.msSleepPerInstruction = 1;
+            p.msSleepPerInstruction = 20;
             p.Run(code);
         }
     }
