@@ -8,7 +8,7 @@ namespace Tests
     public class P80TestClass
     {
         [Test()]
-        public void TestLDA()
+        public void Test_1_LDA()
         {
             CPU p = new CPU();
             p.LDA(12);
@@ -24,7 +24,7 @@ namespace Tests
         }
 
         [Test()]
-        public void TestSWAP()
+        public void Test_2_SWP()
         {
             CPU p = new CPU();
             p.B = 24;
@@ -50,7 +50,7 @@ namespace Tests
         }
 
         [Test()]
-        public void TestSAVE()
+        public void Test_2_SAV()
         {
             CPU p = new CPU();
             p.B = 24;
@@ -64,8 +64,8 @@ namespace Tests
             Assert.AreEqual(12, p.B);
         }
 
-            [Test()]
-        public void TestSUB()
+        [Test()]
+        public void Test_3_SUB()
         {
             CPU p = new CPU();
             p.LDA(1);
@@ -90,7 +90,7 @@ namespace Tests
         }
 
         [Test()]
-        public void TestSUBB()
+        public void Test_3_SUBB()
         {
             CPU p = new CPU();
             p.LDA(13);
@@ -112,7 +112,7 @@ namespace Tests
 
 
         [Test()]
-        public void TestADD()
+        public void Test_3_ADD()
         {
             CPU p = new CPU();
             p.LDA(1);
@@ -137,7 +137,7 @@ namespace Tests
         }
 
         [Test()]
-        public void TestADDB()
+        public void Test_3_ADDB()
         {
             CPU p = new CPU();
             p.LDA(13);
@@ -158,7 +158,7 @@ namespace Tests
         }
 
         [Test()]
-        public void TestAND()
+        public void Test_4_AND()
         {
             CPU p = new CPU();
             p.LDA(255);
@@ -176,7 +176,7 @@ namespace Tests
         }
 
         [Test()]
-        public void TestOR()
+        public void Test_4_OR()
         {
             CPU p = new CPU();
             p.LDA(1);
@@ -197,7 +197,7 @@ namespace Tests
         }
 
         [Test()]
-        public void TestSHL()
+        public void Test_4_SHL()
         {
             CPU p = new CPU();
             p.LDA(1);
@@ -220,7 +220,7 @@ namespace Tests
         }
 
         [Test()]
-        public void TestSHR()
+        public void Test_4_SHR()
         {
             CPU p = new CPU();
             p.LDA(128);
@@ -243,7 +243,7 @@ namespace Tests
         }
 
         [Test()]
-        public void TestNOP()
+        public void Test_5_NOP()
         {
             CPU p = new CPU();
             p.NOP();
@@ -254,7 +254,7 @@ namespace Tests
 
 
         [Test()]
-        public void TestJMP()
+        public void Test_6_JMP()
         {
             CPU p = new CPU();
             p.JMP(10);
@@ -264,24 +264,7 @@ namespace Tests
         }
 
         [Test()]
-        public void TestCMP()
-        {
-            CPU p = new CPU();
-            p.LDA(10);
-            p.CMP(10);
-            Assert.AreEqual(true, p.ZF);
-            Assert.AreEqual(6, p.CYCLES);
-            Assert.AreEqual(2, p.PC);
-
-            p.LDA(10);
-            p.CMP(11);
-            Assert.AreEqual(false, p.ZF);
-            Assert.AreEqual(12, p.CYCLES);
-            Assert.AreEqual(4, p.PC);
-        }
-
-            [Test()]
-        public void TestJNZ()
+        public void Test_6_JNZ()
         {
             CPU p = new CPU();
             p.LDA(10);
@@ -297,5 +280,22 @@ namespace Tests
             Assert.AreEqual(6, p.CYCLES);
             Assert.AreEqual(2, p.PC);
         }
-    }
+
+        [Test()]
+        public void Test_7_CMP()
+        {
+            CPU p = new CPU();
+            p.LDA(10);
+            p.CMP(10);
+            Assert.AreEqual(true, p.ZF);
+            Assert.AreEqual(6, p.CYCLES);
+            Assert.AreEqual(2, p.PC);
+
+            p.LDA(10);
+            p.CMP(11);
+            Assert.AreEqual(false, p.ZF);
+            Assert.AreEqual(12, p.CYCLES);
+            Assert.AreEqual(4, p.PC);
+        }
+    }        
 }
