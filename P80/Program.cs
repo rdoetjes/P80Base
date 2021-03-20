@@ -18,6 +18,8 @@ namespace P80Program
 
         public bool isRunning = false;
 
+        public int msSleepPerInstruction = 100;
+
         public Program()
         {
             p = new CPU();
@@ -62,6 +64,8 @@ namespace P80Program
                     cpuInstruction.Invoke(p, new object[] { Convert.ToByte(Int32.Parse(m.Groups[2].Value) )});
                 else
                     cpuInstruction.Invoke(p, null);
+
+                Thread.Sleep(msSleepPerInstruction);
             }
             catch(NullReferenceException e)
             {
@@ -139,7 +143,6 @@ namespace P80Program
             {
                 Execute(program[p.PC]);
                 DisplayRegisters(p);
-                Thread.Sleep(100);
             }
             isRunning = false;
         }
