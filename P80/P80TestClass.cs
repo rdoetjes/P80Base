@@ -264,6 +264,23 @@ namespace Tests
         }
 
         [Test()]
+        public void TestCMP()
+        {
+            CPU p = new CPU();
+            p.LDA(10);
+            p.CMP(10);
+            Assert.AreEqual(true, p.ZF);
+            Assert.AreEqual(6, p.CYCLES);
+            Assert.AreEqual(2, p.PC);
+
+            p.LDA(10);
+            p.CMP(11);
+            Assert.AreEqual(false, p.ZF);
+            Assert.AreEqual(12, p.CYCLES);
+            Assert.AreEqual(4, p.PC);
+        }
+
+            [Test()]
         public void TestJNZ()
         {
             CPU p = new CPU();
