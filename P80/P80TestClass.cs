@@ -29,7 +29,7 @@ namespace Tests
             CPU p = new CPU();
             p.B = 24;
             p.LDA(12);
-            p.SWAP();
+            p.SWP();
 
             Assert.AreEqual(4, p.CYCLES);
             Assert.AreEqual(2, p.PC);
@@ -40,7 +40,7 @@ namespace Tests
             p = new CPU();
             p.B = 0;
             p.LDA(12);
-            p.SWAP();
+            p.SWP();
 
             Assert.AreEqual(4, p.CYCLES);
             Assert.AreEqual(2, p.PC);
@@ -55,7 +55,7 @@ namespace Tests
             CPU p = new CPU();
             p.B = 24;
             p.LDA(12);
-            p.SAVE();
+            p.SAV();
 
             Assert.AreEqual(3, p.CYCLES);
             Assert.AreEqual(2, p.PC);
@@ -94,7 +94,7 @@ namespace Tests
         {
             CPU p = new CPU();
             p.LDA(13);
-            p.SAVE();
+            p.SAV();
             p.LDA(12);
             p.SUBB();
             Assert.AreEqual(255, p.A);
@@ -141,7 +141,7 @@ namespace Tests
         {
             CPU p = new CPU();
             p.LDA(13);
-            p.SAVE();
+            p.SAV();
             p.LDA(12);
             p.ADDB();
             Assert.AreEqual(25, p.A);

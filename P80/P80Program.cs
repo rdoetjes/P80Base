@@ -123,17 +123,17 @@ namespace P80Program
 
         public void DisplayRegisters(CPU p)
         {
-            Console.SetCursorPosition(50, 1);
+            Console.SetCursorPosition(40, 1);
             Console.WriteLine("|     A: "+p.A.ToString().PadLeft(3));
 
-            Console.SetCursorPosition(50, 2);
+            Console.SetCursorPosition(40, 2);
             Console.WriteLine("|     B: " + p.B.ToString().PadLeft(3));
 
-            Console.SetCursorPosition(50, 3);
+            Console.SetCursorPosition(40, 3);
             String ZF = (p.ZF == true) ? "1" : "0";
             Console.WriteLine("|    ZF: " + ZF.PadLeft(3)); 
 
-            Console.SetCursorPosition(50, 4);
+            Console.SetCursorPosition(40, 4);
             Console.WriteLine("|CYCLES: " + p.CYCLES.ToString().PadLeft(3));
         }
 

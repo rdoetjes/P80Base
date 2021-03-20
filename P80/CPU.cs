@@ -18,7 +18,7 @@ namespace P80
             PC++; 
         }
 
-        public void SWAP()
+        public void SWP()
         {
             CYCLES += 2;
             byte C = A;
@@ -29,7 +29,7 @@ namespace P80
             PC++;
         }
 
-        public void SAVE()
+        public void SAV()
         {
             CYCLES += 1;
             B = A;
