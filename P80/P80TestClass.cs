@@ -327,7 +327,6 @@ namespace Tests
             Assert.AreEqual(true, p.ZF);
             Assert.AreEqual(8, p.CYCLES);
             Assert.AreEqual(2, p.PC);
-
         }
     }        
 }
