@@ -1,0 +1,19 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P80", "P80\P80.csproj", "{76D33BA8-88DA-46C1-953C-D2289A3691B2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A6AEE0DE-7EEE-428F-90CE-7368F810BEEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|anycpu = Debug|anycpu
+		Release|anycpu = Release|anycpu
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76D33BA8-88DA-46C1-953C-D2289A3691B2}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{76D33BA8-88DA-46C1-953C-D2289A3691B2}.Debug|anycpu.Build.0 = Debug|anycpu
+		{76D33BA8-88DA-46C1-953C-D2289A3691B2}.Release|anycpu.ActiveCfg = Release|anycpu
+		{76D33BA8-88DA-46C1-953C-D2289A3691B2}.Release|anycpu.Build.0 = Release|anycpu
+	EndGlobalSection
+EndGlobal
