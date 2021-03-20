@@ -8,6 +8,8 @@ namespace P80
         public int PC;
         public int CYCLES;
         public bool ZF;
+        public byte P1;
+        public byte P2;
 
         public void LDA(byte V)
         {
@@ -34,6 +36,23 @@ namespace P80
             CYCLES += 1;
             B = A;
 
+            PC++;
+        }
+
+        public void OUT()
+        {
+            CYCLES += 4; 
+            P1 = A;
+
+            PC++;
+        }
+
+        public void IN()
+        {
+            CYCLES += 4;
+            A = P1;
+
+            ZF = (A == 0) ? true : false;
             PC++;
         }
 

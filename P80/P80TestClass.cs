@@ -297,5 +297,37 @@ namespace Tests
             Assert.AreEqual(12, p.CYCLES);
             Assert.AreEqual(4, p.PC);
         }
+
+        [Test()]
+        public void Test_8_OUT()
+        {
+            CPU p = new CPU();
+            p.LDA(10);
+            p.OUT();
+
+            Assert.AreEqual(false, p.ZF);
+            Assert.AreEqual(6, p.CYCLES);
+            Assert.AreEqual(2, p.PC);
+        }
+
+        [Test()]
+        public void Test_8_IN()
+        {
+            CPU p = new CPU();
+            p.P1 = 255;
+            p.IN();
+
+            Assert.AreEqual(false, p.ZF);
+            Assert.AreEqual(4, p.CYCLES);
+            Assert.AreEqual(1, p.PC);
+
+            p.P1 = 0;
+            p.IN();
+
+            Assert.AreEqual(true, p.ZF);
+            Assert.AreEqual(8, p.CYCLES);
+            Assert.AreEqual(2, p.PC);
+
+        }
     }        
 }
